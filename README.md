@@ -59,7 +59,7 @@ Verbose recursive deletion:
  
 - ## 🛠️ Build
 ```bash
-    gcc -Wall -Wextra -o rm main.c
+    gcc -Wall -Wextra -o rm rm.c
 ```
 
 ## 📚 Learning Goals
