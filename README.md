@@ -1,4 +1,4 @@
-# 🗑️ mini-rm
+# 🗑️ coreutils_rm_remake
 
 A minimal implementation of the Unix `rm` command written in C for Linux.  
 This project recreates core functionality of `rm`, including recursive deletion, empty-directory removal, and verbose output—without relying on the actual GNU `rm`.
