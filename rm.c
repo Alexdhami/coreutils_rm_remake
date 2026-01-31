@@ -168,7 +168,7 @@ int recursive_del(const char* path, const uint8_t* flags){
         return -1;
     }
     else{
-        printf("removing directory '%s'\n",path);
+        printf("removed directory '%s'\n",path);
     }
     return 0;
 }
