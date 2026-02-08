@@ -82,17 +82,20 @@ void empty_dir_del(const char* path, const uint8_t* flags){
 void delete_file (const char* path, const uint8_t* flags){
     struct stat buf_stat;
 
-    if (stat(path,&buf_stat) == -1){
+    if (stat(path,&buf_stat) != 0){
         perror(path);
         return;
     }
 
     if (S_ISREG(buf_stat.st_mode)){
-        if(unlinkat(-100,path,0) == 0 && *flags & FLAG_VERBOSE){
+        int returned_val = unlinkat(-100,path,0); 
+
+        if((returned_val == 0) && (*flags & FLAG_VERBOSE)){
             printf("removed '%s'\n", path);
             return;
         }
-        else{
+
+        else if (returned_val != 0){
             perror(path);
             return;
         }
